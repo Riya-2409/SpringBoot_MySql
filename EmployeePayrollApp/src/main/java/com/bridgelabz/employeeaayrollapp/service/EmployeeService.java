@@ -1,10 +1,12 @@
 package com.bridgelabz.employeeaayrollapp.service;
 
+import com.bridgelabz.employeeaayrollapp.dto.EmployeeDTO;
 import com.bridgelabz.employeeaayrollapp.model.Employee;
 import com.bridgelabz.employeeaayrollapp.repository.EmployeeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class EmployeeService {
@@ -14,27 +16,50 @@ public class EmployeeService {
         this.repository = repository;
     }
 
-    public List<Employee> getAllEmployees() {
-        return repository.findAll();
+    // Convert Employee to EmployeeDTO
+    private EmployeeDTO convertToDTO(Employee employee) {
+        return new EmployeeDTO(employee.getId(), employee.getName(), employee.getDepartment(), employee.getSalary());
     }
 
-    public Employee getEmployeeById(Long id) {
-        return repository.findById(id).orElse(null);
+    // Convert EmployeeDTO to Employee
+    private Employee convertToEntity(EmployeeDTO employeeDTO) {
+        return new Employee(employeeDTO.getId(), employeeDTO.getName(), employeeDTO.getDepartment(), employeeDTO.getSalary());
     }
 
-    public Employee addEmployee(Employee employee) {
-        return repository.save(employee);
+    // Get All Employees as DTOs
+    public List<EmployeeDTO> getAllEmployeesDTO() {
+        return repository.findAll()
+                .stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
     }
 
-    public Employee updateEmployee(Long id, Employee updatedEmployee) {
-        if (repository.existsById(id)) {
-            updatedEmployee.setId(id);
-            return repository.save(updatedEmployee);
-        }
-        return null;
+    // Get Employee By ID as DTO
+    public EmployeeDTO getEmployeeDTOById(Long id) {
+        return repository.findById(id)
+                .map(this::convertToDTO)
+                .orElse(null);
     }
 
-    public void deleteEmployee(Long id) {
+    // Add Employee using DTO
+    public EmployeeDTO addEmployeeDTO(EmployeeDTO employeeDTO) {
+        Employee employee = convertToEntity(employeeDTO);
+        Employee savedEmployee = repository.save(employee);
+        return convertToDTO(savedEmployee);
+    }
+
+    // Update Employee
+    public EmployeeDTO updateEmployeeDTO(Long id, EmployeeDTO employeeDTO) {
+        return repository.findById(id).map(existingEmployee -> {
+            existingEmployee.setName(employeeDTO.getName());
+            existingEmployee.setDepartment(employeeDTO.getDepartment());
+            existingEmployee.setSalary(employeeDTO.getSalary());
+            return convertToDTO(repository.save(existingEmployee));
+        }).orElse(null);
+    }
+
+    // Delete Employee
+    public void deleteEmployeeDTO(Long id) {
         repository.deleteById(id);
     }
 }

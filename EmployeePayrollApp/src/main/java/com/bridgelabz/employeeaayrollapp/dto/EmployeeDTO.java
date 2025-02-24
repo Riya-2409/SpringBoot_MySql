@@ -1,27 +1,18 @@
-package com.bridgelabz.employeeaayrollapp.model;
+package com.bridgelabz.employeeaayrollapp.dto;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "employees")
-public class Employee {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class EmployeeDTO {
     private Long id;
     private String name;
     private String department;
     private double salary;
 
-    // No-argument constructor (default)
-    public Employee() {
+    public EmployeeDTO() {
     }
 
-    // Parameterized constructor
-    public Employee(Long id, String name, String department, double salary) {
-        this.id = id;
+    public EmployeeDTO(Long id, String name, String department, double salary) {
+        this.id= id;
         this.name = name;
-        this.department = department;
+        this.department =department;
         this.salary = salary;
     }
 
