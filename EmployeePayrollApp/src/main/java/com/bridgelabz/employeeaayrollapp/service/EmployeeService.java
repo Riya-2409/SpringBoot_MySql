@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
@@ -65,60 +66,60 @@ public class EmployeeService {
         repository.deleteById(id);
     }*/
 
-        private final List<Employee> employeeList = new ArrayList<>();
-        private final AtomicLong counter = new AtomicLong(1); // To generate unique IDs manually
+        private final EmployeeRepository employeeRepository;
+
+        public EmployeeService(EmployeeRepository employeeRepository) {
+            this.employeeRepository = employeeRepository;
+        }
 
         // Convert Employee to EmployeeDTO
         private EmployeeDTO convertToDTO(Employee employee) {
-            return new EmployeeDTO(employee.getId(), employee.getName(), employee.getDepartment(), employee.getSalary());
+            return new EmployeeDTO(employee.getId(), employee.getName(), employee.getSalary());
         }
 
         // Convert EmployeeDTO to Employee
         private Employee convertToEntity(EmployeeDTO employeeDTO) {
-            return new Employee(employeeDTO.getId(), employeeDTO.getName(), employeeDTO.getDepartment(), employeeDTO.getSalary());
+            return new Employee(employeeDTO.getId(), employeeDTO.getName(), employeeDTO.getSalary());
         }
 
         // Get All Employees as DTOs
         public List<EmployeeDTO> getAllEmployeesDTO() {
-            return employeeList.stream()
+            return employeeRepository.findAll().stream()
                     .map(this::convertToDTO)
                     .collect(Collectors.toList());
         }
 
         // Get Employee By ID as DTO
         public EmployeeDTO getEmployeeDTOById(Long id) {
-            return employeeList.stream()
-                    .filter(emp -> emp.getId().equals(id))
-                    .findFirst()
-                    .map(this::convertToDTO)
-                    .orElse(null);
+            Optional<Employee> employee = employeeRepository.findById(id);
+            return employee.map(this::convertToDTO).orElse(null);
         }
 
         // Add Employee using DTO
         public EmployeeDTO addEmployeeDTO(EmployeeDTO employeeDTO) {
-            Employee employee = convertToEntity(employeeDTO);
-            employee.setId(counter.getAndIncrement()); // Assign unique ID manually
-            employeeList.add(employee);
-            return convertToDTO(employee);
+            Employee employee = new Employee(null, employeeDTO.getName(), employeeDTO.getSalary()); // ID auto-generated
+            Employee savedEmployee = employeeRepository.save(employee);
+            return convertToDTO(savedEmployee);
         }
 
         // Update Employee
         public EmployeeDTO updateEmployeeDTO(Long id, EmployeeDTO employeeDTO) {
-            for (Employee employee : employeeList) {
-                if (employee.getId().equals(id)) {
-                    employee.setName(employeeDTO.getName());
-                    employee.setDepartment(employeeDTO.getDepartment());
-                    employee.setSalary(employeeDTO.getSalary());
-                    return convertToDTO(employee);
-                }
+            Optional<Employee> optionalEmployee = employeeRepository.findById(id);
+            if (optionalEmployee.isPresent()) {
+                Employee employee = optionalEmployee.get();
+                employee.setName(employeeDTO.getName());
+                employee.setSalary(employeeDTO.getSalary());
+                Employee updatedEmployee = employeeRepository.save(employee);
+                return convertToDTO(updatedEmployee);
             }
-            return null;
+            return null; // Employee not found
         }
 
         // Delete Employee
         public void deleteEmployeeDTO(Long id) {
-            employeeList.removeIf(emp -> emp.getId().equals(id));
+            employeeRepository.deleteById(id);
         }
     }
+
 
 

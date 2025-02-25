@@ -1,52 +1,14 @@
 package com.bridgelabz.employeeaayrollapp.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data  // Generates Getters, Setters, toString(), equals(), and hashCode()
+@NoArgsConstructor
+@AllArgsConstructor
 public class EmployeeDTO {
-    private Long id;
+    private Long id;  // Use Long to match with the Entity
     private String name;
-    private String department;
     private double salary;
-
-    public EmployeeDTO() {
-    }
-
-    public EmployeeDTO(Long id, String name, String department, double salary) {
-        this.id= id;
-        this.name = name;
-        this.department =department;
-        this.salary = salary;
-    }
-
-    // Getters and Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
 }
-
