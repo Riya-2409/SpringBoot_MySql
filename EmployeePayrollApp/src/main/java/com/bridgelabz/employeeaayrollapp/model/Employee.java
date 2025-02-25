@@ -31,4 +31,8 @@ public class Employee {
 
     public double getSalary() { return salary; }
     public void setSalary(double salary) { this.salary = salary; }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> UC3-LogginG_Levels_Logging_To_Console_Logging_Patterns
