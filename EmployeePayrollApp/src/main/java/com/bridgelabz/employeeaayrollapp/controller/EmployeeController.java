@@ -12,7 +12,7 @@ import java.util.List;
 @RequestMapping("/api/employees")
 public class EmployeeController {
 
-    private final EmployeeService service;
+   /* private final EmployeeService service;
 
     @Autowired
     public EmployeeController(EmployeeService service) {
@@ -42,5 +42,28 @@ public class EmployeeController {
     @DeleteMapping("/{id}")
     public void deleteEmployeeDTO(@PathVariable Long id) {
         service.deleteEmployeeDTO(id);
+    }*/
+
+    @Autowired
+    private EmployeeService service;
+
+    @GetMapping
+    public List<Employee> getAllEmployees() { return service.getAllEmployees(); }
+
+    @GetMapping("/{id}")
+    public Employee getEmployeeById(@PathVariable Long id) { return service.getEmployeeById(id); }
+
+
+    @PostMapping
+    public Employee createEmployee(@RequestBody EmployeeDTO employeeDTO) {
+        return service.saveEmployee(employeeDTO);
     }
+
+    @PutMapping("/{id}")
+    public Employee updateEmployee(@PathVariable Long id, @RequestBody EmployeeDTO employeeDTO) {
+        return service.updateEmployee(id, employeeDTO);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteEmployee(@PathVariable Long id) { service.deleteEmployee(id); }
 }
