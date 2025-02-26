@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class EmployeeDTO {
-    private Long id;  // Use Long to match with the Entity
+    private Long id;
     private String name;
     private double salary;
 }
