@@ -1,6 +1,55 @@
-2025-02-26 11:09:13 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12h36m23s326ms588µs400ns).
-2025-02-26 11:39:21 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-02-26 11:39:21 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
-2025-02-26 11:39:21 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-02-26 11:39:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-02-26 11:39:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-02-27 15:26:39 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:53] - Starting EmployeePayrollAppApplication using Java 23.0.2 with PID 4848 (D:\SpringBoot_MySql\EmployeePayrollApp\target\classes started by hp in D:\SpringBoot_MySql\EmployeePayrollApp)
+2025-02-27 15:26:39 [DEBUG][restartedMain] [c.b.e.EmployeePayrollAppApplication:54] - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-02-27 15:26:39 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:658] - The following 1 profile is active: "dev"
+2025-02-27 15:26:45 [DEBUG][restartedMain] [o.h.SQL:135] - create table employee_payroll (id bigint not null auto_increment, departments varbinary(255), gender varchar(255), name varchar(255), note varchar(255), profile_pic varchar(255), salary float(53) not null, start_date date, primary key (id)) engine=InnoDB
+2025-02-27 15:26:46 [WARN][restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:241] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-27 15:26:46 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:59] - Started EmployeePayrollAppApplication in 7.958 seconds (process running for 8.884)
+2025-02-27 15:26:46 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:20] - Employee Payroll Application has started successfully in enviroment: DEV
+2025-02-27 15:34:16 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:53] - Starting EmployeePayrollAppApplication using Java 23.0.2 with PID 17544 (D:\SpringBoot_MySql\EmployeePayrollApp\target\classes started by hp in D:\SpringBoot_MySql\EmployeePayrollApp)
+2025-02-27 15:34:16 [DEBUG][restartedMain] [c.b.e.EmployeePayrollAppApplication:54] - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-02-27 15:34:16 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:658] - The following 1 profile is active: "dev"
+2025-02-27 15:34:23 [WARN][restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:241] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-27 15:34:23 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:59] - Started EmployeePayrollAppApplication in 7.734 seconds (process running for 8.566)
+2025-02-27 15:34:23 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:20] - Employee Payroll Application has started successfully in enviroment: DEV
+2025-02-27 15:53:39 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:53] - Starting EmployeePayrollAppApplication using Java 23.0.2 with PID 14256 (D:\SpringBoot_MySql\EmployeePayrollApp\target\classes started by hp in D:\SpringBoot_MySql\EmployeePayrollApp)
+2025-02-27 15:53:39 [DEBUG][restartedMain] [c.b.e.EmployeePayrollAppApplication:54] - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-02-27 15:53:39 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:658] - The following 1 profile is active: "dev"
+2025-02-27 15:53:44 [DEBUG][restartedMain] [o.h.SQL:135] - create table employees (id bigint not null auto_increment, departments varbinary(255), gender varchar(255), name varchar(255), note varchar(255), profile_pic varchar(255), salary float(53) not null, start_date date, primary key (id)) engine=InnoDB
+2025-02-27 15:53:45 [WARN][restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:241] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-27 15:53:46 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:59] - Started EmployeePayrollAppApplication in 8.072 seconds (process running for 8.942)
+2025-02-27 15:53:46 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:20] - Employee Payroll Application has started successfully in enviroment: DEV
+2025-02-27 16:02:46 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:53] - Starting EmployeePayrollAppApplication using Java 23.0.2 with PID 12176 (D:\SpringBoot_MySql\EmployeePayrollApp\target\classes started by hp in D:\SpringBoot_MySql\EmployeePayrollApp)
+2025-02-27 16:02:46 [DEBUG][restartedMain] [c.b.e.EmployeePayrollAppApplication:54] - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-02-27 16:02:46 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:658] - The following 1 profile is active: "dev"
+2025-02-27 16:02:53 [DEBUG][restartedMain] [o.h.SQL:135] - alter table employees add column departments varbinary(255)
+2025-02-27 16:02:53 [DEBUG][restartedMain] [o.h.SQL:135] - alter table employees modify column gender varchar(255)
+2025-02-27 16:02:53 [DEBUG][restartedMain] [o.h.SQL:135] - alter table employees modify column note varchar(255)
+2025-02-27 16:02:54 [WARN][restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:241] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-27 16:02:54 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:59] - Started EmployeePayrollAppApplication in 9.113 seconds (process running for 10.03)
+2025-02-27 16:02:54 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:20] - Employee Payroll Application has started successfully in enviroment: DEV
+2025-02-27 16:07:18 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:53] - Starting EmployeePayrollAppApplication using Java 23.0.2 with PID 15068 (D:\SpringBoot_MySql\EmployeePayrollApp\target\classes started by hp in D:\SpringBoot_MySql\EmployeePayrollApp)
+2025-02-27 16:07:18 [DEBUG][restartedMain] [c.b.e.EmployeePayrollAppApplication:54] - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-02-27 16:07:18 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:658] - The following 1 profile is active: "dev"
+2025-02-27 16:07:24 [DEBUG][restartedMain] [o.h.SQL:135] - create table employee (id bigint not null auto_increment, department varbinary(255), gender varchar(255), name varchar(255), note varchar(255), profile_pic varchar(255), salary float(53) not null, start_date date, primary key (id)) engine=InnoDB
+2025-02-27 16:07:25 [WARN][restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:241] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-27 16:07:26 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:59] - Started EmployeePayrollAppApplication in 8.84 seconds (process running for 9.604)
+2025-02-27 16:07:26 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:20] - Employee Payroll Application has started successfully in enviroment: DEV
+2025-02-27 16:13:05 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:53] - Starting EmployeePayrollAppApplication using Java 23.0.2 with PID 14884 (D:\SpringBoot_MySql\EmployeePayrollApp\target\classes started by hp in D:\SpringBoot_MySql\EmployeePayrollApp)
+2025-02-27 16:13:05 [DEBUG][restartedMain] [c.b.e.EmployeePayrollAppApplication:54] - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-02-27 16:13:05 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:658] - The following 1 profile is active: "dev"
+2025-02-27 16:13:10 [DEBUG][restartedMain] [o.h.SQL:135] - alter table employees modify column salary float(53) not null
+2025-02-27 16:13:11 [WARN][restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:241] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-27 16:13:12 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:59] - Started EmployeePayrollAppApplication in 8.275 seconds (process running for 9.06)
+2025-02-27 16:13:12 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:20] - Employee Payroll Application has started successfully in enviroment: DEV
+2025-02-27 16:15:07 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:53] - Starting EmployeePayrollAppApplication using Java 23.0.2 with PID 6328 (D:\SpringBoot_MySql\EmployeePayrollApp\target\classes started by hp in D:\SpringBoot_MySql\EmployeePayrollApp)
+2025-02-27 16:15:07 [DEBUG][restartedMain] [c.b.e.EmployeePayrollAppApplication:54] - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-02-27 16:15:07 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:658] - The following 1 profile is active: "dev"
+2025-02-27 16:15:14 [DEBUG][restartedMain] [o.h.SQL:135] - create table employe (id bigint not null auto_increment, department varbinary(255), gender varchar(255), name varchar(255), note varchar(255), profile_pic varchar(255), salary float(53) not null, start_date date, primary key (id)) engine=InnoDB
+2025-02-27 16:15:15 [WARN][restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:241] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-27 16:15:17 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:59] - Started EmployeePayrollAppApplication in 10.336 seconds (process running for 11.179)
+2025-02-27 16:15:17 [INFO][restartedMain] [c.b.e.EmployeePayrollAppApplication:20] - Employee Payroll Application has started successfully in enviroment: DEV
+2025-02-27 16:16:35 [DEBUG][http-nio-8888-exec-5] [o.h.SQL:135] - select e1_0.id,e1_0.department,e1_0.gender,e1_0.name,e1_0.note,e1_0.profile_pic,e1_0.salary,e1_0.start_date from employe e1_0
+2025-02-27 16:30:14 [DEBUG][http-nio-8888-exec-7] [o.h.SQL:135] - select e1_0.id,e1_0.department,e1_0.gender,e1_0.name,e1_0.note,e1_0.profile_pic,e1_0.salary,e1_0.start_date from employe e1_0
+2025-02-27 16:36:38 [DEBUG][http-nio-8888-exec-1] [o.h.SQL:135] - select e1_0.id,e1_0.department,e1_0.gender,e1_0.name,e1_0.note,e1_0.profile_pic,e1_0.salary,e1_0.start_date from employe e1_0
+2025-02-27 16:37:13 [DEBUG][http-nio-8888-exec-6] [o.h.SQL:135] - select e1_0.id,e1_0.department,e1_0.gender,e1_0.name,e1_0.note,e1_0.profile_pic,e1_0.salary,e1_0.start_date from employe e1_0
+2025-02-27 20:29:43 [WARN][HikariPool-1 housekeeper] [c.z.h.p.HikariPool:797] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h31m30s592ms136µs700ns).
